@@ -1,0 +1,52 @@
+@import './mixin';
+@import './color';
+header {
+    @include flexCenter;
+    flex-wrap:wrap;
+    flex-direction: column;
+    width: 100vw;
+    
+    .menu-media {
+        @include flexCenter;
+        flex-wrap: nowrap;
+        flex-direction: row;
+        align-self: flex-end;
+        order:1;
+        width: 30vw;
+        list-style: none;
+       
+    }
+    .box_menu{
+        @include flexCenter;
+        order:2;
+        position: relative;
+        top:-20px;
+        flex-direction: column;
+        height: 100px;
+        flex-wrap: nowrap;
+        h1 {
+            text-align: center;
+            color: $primary;
+            font-size: 4rem;
+           
+        }
+        .pointer-nav{
+            min-width: 5px;
+            min-height: 5px;
+            background-color: red;
+           
+        }
+        .menu-navigation {
+            @include flexCenter;
+            width: 100%;
+            flex-wrap: nowrap;
+            list-style: none;
+            margin: 1rem 0 0 0;
+            
+            text-transform: uppercase;
+            
+        }
+        
+    }
+    
+}
