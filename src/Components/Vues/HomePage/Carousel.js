@@ -19,11 +19,13 @@ class CarouselHome extends Component {
   };
   componentWillUpdate(){
       console.log("component will update");
+      console.log(this.state.data[this.state.activeIndex].id);
+   
   }
   componentWillMount(){
       console.log("component will mount")
   }
-  componentDidMount(){
+   componentDidMount(){
       console.log("component did mount");
       setInterval(()=>this.nextImage(), 4000);
   }
@@ -40,28 +42,50 @@ class CarouselHome extends Component {
     }
      
     nextImage=()=>{
-        const { activeIndex, data } = this.state;
+        const { activeIndex, data} = this.state;
         if(activeIndex<data.length-1){
-            console.log("before");
             this.setState({activeIndex: activeIndex+1});
-            console.log("after");
+            console.log(activeIndex+1)
         }   
-    } 
+    }
+ /*    choseImage= ()=>{
+        const {activeIndex, data}= this.state;
+        this.setState({activeIndex: data.id});
+    } */ 
 
     render() {
-        const { data } = this.state;
+        const {data} = this.state;
         console.log(this.state.activeIndex+'ème item');
         console.log(bdd.length+'item');
+
+             
+        const setListButtons = data.map((item, index)=>{
+            let computedClass= index ===(this.state.activeIndex)? ' slide transition':' slide';
+               return  <button key={item.id} className={"list_buttons"+ computedClass} onClick={()=>this.setState({activeIndex:item.id-1})}>{item.id}</button>
+        }
+        )
+        /* className={
+            "badge " +
+            (this.state.value ? "badge-primary " : "badge-danger ") +
+            " m-4"
+          } */
+
+
         return (
 
 
-            <div>
-                <button onClick={()=>this.previousImage(data)}>1</button>
-                <button onClick={()=>this.nextImage(data)}>2</button>
-                <div style={{transition: "0.3s", backgroundImage: 'url('+data[this.state.activeIndex].url+')'}} className='box_carousel' key={data[this.state.activeIndex].id}>
-                    {data[this.state.activeIndex].title}
+           
+                <div id='box-carousel' style={{backgroundImage: 'url('+data[this.state.activeIndex].url+')'}}>
+                    <div className='box-title-project'>
+                        <h3 className='title-categorie'>{data[this.state.activeIndex].cat}</h3>
+                        <h2 className='title-grid'>{data[this.state.activeIndex].title}</h2>
+                        <button className='button'>See more</button>
+                     </div>
+                    <ol className='box-list_buttons'>
+                        {setListButtons}
+                    </ol>
                 </div>
-            </div>
+          
           )
     }
 }

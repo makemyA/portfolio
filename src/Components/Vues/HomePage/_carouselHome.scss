@@ -1,40 +1,108 @@
-/* .carousel-box{
-    
-    .carousel{
-        margin: 4rem auto;
-        padding: 0;
-         .carousel-indicators li {
+
+
+ #box-carousel{
+     /* filter: grayscale(50%); */
+     /* filter: contrast(80%); */
+      /*filter: sepia(0%) grayscale(50%)  contrast(70%);  */ 
+      z-index: 2;  
+      color: transparent;
+     display:flex;
+     flex-wrap: wrap;
+     flex-direction: column;
+     justify-content: space-around;
+     align-items: center;
+     background-repeat: no-repeat;
+     background-size: contain;
+     flex:100%;
+     min-height: 350px;
+     margin: 0 auto;     
+     border-radius: 5px;
+ } 
+     .box-title-project{
+         z-index: 1;  
+         border-radius: 5px;
+         padding:0;
+         color:white;
+        /* background-color: rgba(255, 255, 255,0.2); */
+         display:flex;
+         flex-direction: column;
+         justify-content: space-evenly;
+         align-items: center;
+         margin-top:2em;
+         height: 50%;
+      /*   & :hover{
+            color:white;
+        background-color: rgba(243, 46, 46, 0.986);
+        filter: none;
+        } */
+        .title-categorie{
+            font-size: 1em;
+        }
+        .title-grid{
+           font-size: 1.5em;
+        }
+        .button{
             position: relative;
-            top: 30px;
-            margin: 1rem;
-            height: 10px;
-            width: 10px;
-            border-radius: 0px;
+            background-color: transparent;
+            color:white;
+            font-size: 1em;
+            text-decoration: none;
             border: none;
-    
+            width: 65px;
+            text-align: center;
+        }
+        .button::after{
+            content:"";
+            position: absolute;
+            top:20px;
+            left:0;
+            width:100%;
+            height: 1px;
+            background: white;
+            transform: scaleX(1);
+            transform-origin: bottom left;
+            transition: transform 0.3s;
+        }
+        .button:hover::after{
+            transform: scaleX(0);
         }
     }
-    .list-decimal{
-        @include flexCenter;
-           color : red;
-           position: relative;
-           top: -100px;
-           left: 34.5%;
-           width: 180px;
-           & li{
-               color: white;
-               margin-left: 1.9rem;
-           }
-         
-    }
-}
- */
-
- .box_carousel{
-     background-repeat: no-repeat;
-     background-size: cover;
-     border: 1px solid black;
-     height: 300px;
- }
+     
+     .box-list_buttons{
+         z-index: 2;  
+         color:white;
+         display: flex;
+         flex-direction: row;
+         justify-content: center;
+         align-items: flex-end;
+         justify-content: space-evenly;
+         flex-wrap: nowrap;
+         width: 20%;
+     }
+     .list_buttons{
+         display:flex;
+         flex-direction: column;
+         align-items: center;
+         justify-content: center;
+         background-color: transparent;
+         border: none;
+         font-size: 0.6em; 
+     }
+     
  
-    
+.slide.transition:after{
+    width: 0.4em;
+    height:0.4em;
+    content:"";
+    margin-top:0.3em;
+    background-color: white;
+}
+.slide:after{
+    width: 0.4em;
+    height:0.4em;
+    content:"";
+    margin-top: 0.3em;
+    background-color: transparent;
+}
+
+ 

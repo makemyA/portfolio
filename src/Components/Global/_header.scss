@@ -1,34 +1,76 @@
 @import './mixin';
 @import './color';
+ header::after{
+    z-index: 1;
+    position: absolute;
+    top:40%;
+    content:"";
+     overflow: hidden;
+    height: 100%;
+    width: 100vw;
+    background: -webkit-linear-gradient(-180deg, rgba(245, 245, 245,1), rgb(255, 255, 255));
+    background: linear-gradient(-180deg, rgba(245, 245, 245,1), rgb(255, 255, 255));
+} 
 header {
     @include flexCenter;
-    flex-wrap:wrap;
-    flex-direction: column;
-    width: 100vw;
-    
+    flex-wrap:nowrap;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+    margin: 0 auto;
+    height: 100px;
+    width: 100%;
+    background-color: white;
     .menu-media {
         @include flexCenter;
         flex-wrap: nowrap;
         flex-direction: row;
-        align-self: flex-end;
-        order:1;
-        width: 30vw;
+        justify-content:center;
+        align-self: flex-start;
+        margin-top:1em;
+        width: 15%;
         list-style: none;
-       
+        color: black;
+       li {
+           margin-left: 0.9em;
+           color: black;
+           a{
+               color: black;
+           }
+           a:hover{
+               color:lightgray;
+           }
+       }
     }
+    .box-presentation{
+        width: 15%;
+        margin-top: 0.5em;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        line-height: 0.1em;
+         .title{
+            font-size: 1.2em;
+            text-align: left;
+            margin: 0;
+            padding: 0;
+        }
+        h3{
+            font-size: 0.5em;
+        }
+     }
     .box_menu{
         @include flexCenter;
-        order:2;
-        position: relative;
-        top:-20px;
         flex-direction: column;
-        height: 100px;
         flex-wrap: nowrap;
+        width:50%;
+        height:70px;
         h1 {
             text-align: center;
             color: $primary;
-            font-size: 4rem;
-           
+            font-size: 1.5em;
+          
         }
         .pointer-nav{
             min-width: 5px;
@@ -38,13 +80,20 @@ header {
         }
         .menu-navigation {
             @include flexCenter;
-            width: 100%;
+            width: 50%;
             flex-wrap: nowrap;
             list-style: none;
-            margin: 1rem 0 0 0;
-            
+            margin: 0.5em 0 0 0;
             text-transform: uppercase;
-            
+            font-size: 0.6em;
+            color:lightgray;
+            a{
+                text-decoration: none;
+                color: lightgray;
+            }
+            a:hover{
+                color: $primary;
+            }
         }
         
     }

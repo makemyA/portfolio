@@ -1,11 +1,116 @@
 @import './carouselHome';
-.header {
-    background-color: white;
+html {
+    width: 100vw;
+    margin: 0 auto;
+    background-color: white;  
 }
-.text{
-    color: red;
+#blockColorblindContent {
+    display: none;
+    background-color: transparent;
+}
+#root{
+    width: 100vw;
+    margin: 0 auto;
+    /* overflow-x: initial; */
+}
+body > #root > div {
+    height: 100%;
+  }
+.container-home{
+    .container-section1{
+        z-index: 2;  
+        width: 600px; 
+        margin: 0 auto;
+        padding-bottom: 100px;
+        display:flex;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+    .box-text{
+        z-index: 2; 
+        flex:100%;
+        margin: 0 auto; 
+        margin-bottom:1em;
+        margin-top: 1em;
+        .text{
+            color: $primary;
+            opacity: 1;
+            font-size: 0.7em;
+        /*  background-color: rgba(0, 0, 0,0.1); */
+        }
+        .text.left{
+            text-align: left;
+            margin-left:2em;
+            margin-bottom:0.2em;
+        }
+        .text.center{
+            text-align: left;
+            margin-left: 4em;
+        }
+    }
+    ul{
+        display: flex;
+        list-style: none;
+        flex-direction: row;
+        z-index:1;
+        li a{
+            position: relative;
+            text-decoration: none;
+            color :black;
+            margin: 0.5em;
+            background: white;
+        }
+        li a::after{
+            z-index:10000;
+            content: "";
+            position: absolute;
+            top: 20px;
+            left: 0;
+            width: 70px;
+            height: 1px;
+            transform: scaleX(1);
+            transform-origin: bottom left;
+            background: black;
+            z-index: -1;
+            transition: transform 0.3s;
+        }
+        li a:hover::after{
+            z-index:10000;
+            transform: scaleX(0);
+        }
+    }
+    
+    #arrow-down1 {
+        z-index: 3; 
+        color: black;
+        font-size: 1.5em;
+        text-align: center;
+        opacity: 1;
+        flex:100%;
+    }
+}
+#arrow-down2 {
+    z-index: 3; 
+    color: black;
+    font-size: 1.5em;
     text-align: center;
+    opacity: 1;
+    flex:100%;
 }
-.img1 {
-    width: 100%;
+#arrow-up1{
+    z-index: 3; 
+        color: black;
+        font-size: 1.5em;
+        text-align: center;
+        opacity: 1;
+        flex:100%;
+}
+#arrow-up2{
+    z-index: 3; 
+    color: black;
+    font-size: 1.5em;
+    text-align: center;
+    opacity: 1;
+    flex:100%;
+}
 }
