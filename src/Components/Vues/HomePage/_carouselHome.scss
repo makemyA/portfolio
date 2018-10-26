@@ -4,8 +4,8 @@
      /* filter: grayscale(50%); */
      /* filter: contrast(80%); */
       /*filter: sepia(0%) grayscale(50%)  contrast(70%);  */ 
-      z-index: 2;  
-      color: transparent;
+     position: relative;
+     z-index: 1; 
      display:flex;
      flex-wrap: wrap;
      flex-direction: column;
@@ -13,64 +13,81 @@
      align-items: center;
      background-repeat: no-repeat;
      background-size: contain;
+     min-height:230px;
      flex:100%;
-     min-height: 350px;
-     margin: 0 auto;     
-     border-radius: 5px;
- } 
+     margin: 0 auto;
      .box-title-project{
-         z-index: 1;  
-         border-radius: 5px;
-         padding:0;
-         color:white;
-        /* background-color: rgba(255, 255, 255,0.2); */
-         display:flex;
-         flex-direction: column;
-         justify-content: space-evenly;
-         align-items: center;
-         margin-top:2em;
-         height: 50%;
-      /*   & :hover{
-            color:white;
-        background-color: rgba(243, 46, 46, 0.986);
-        filter: none;
-        } */
-        .title-categorie{
+        position: absolute;
+        background: inherit;
+        top:13%;
+        left:17%;
+        width: 70%;
+        height: 70%;
+        overflow: hidden;   
+        .box-title-project--text{
+            z-index: 1;
+           /*  background: rgba(255, 255, 255,0.4); */
+            width: 100%;
+            margin: 0 auto;
+            color:black;
+            display:flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
+            margin-top:2em;
+            height: 70%;
+            .title-categorie{
+                z-index: 1;
+                font-size: 0.7em;
+            }
+            .title-grid{
+            z-index: 1;
             font-size: 1em;
+            font-weight: 550;
+            }
+            .button{
+                position: relative;
+                background-color: transparent;
+                z-index: 1;
+                font-size: 0.7em;
+                text-decoration: none;
+                border: none;
+                width: 65px;
+                text-align: center;
+            }
+            .button::after{
+                content:"";
+                position: absolute;
+                top:15px;
+                left:10%;
+                width:80%;
+                height: 1px;
+                z-index: 2;
+                transform: scaleX(1);
+                transform-origin: bottom left;
+                transition: transform 0.3s;
+            }
+            .button:hover::after{
+                transform: scaleX(0);
+            } 
         }
-        .title-grid{
-           font-size: 1.5em;
-        }
-        .button{
-            position: relative;
-            background-color: transparent;
-            color:white;
-            font-size: 1em;
-            text-decoration: none;
-            border: none;
-            width: 65px;
-            text-align: center;
-        }
-        .button::after{
-            content:"";
+        .box-title-project--blur{
             position: absolute;
-            top:20px;
-            left:0;
-            width:100%;
-            height: 1px;
-            background: white;
-            transform: scaleX(1);
-            transform-origin: bottom left;
-            transition: transform 0.3s;
-        }
-        .button:hover::after{
-            transform: scaleX(0);
+            z-index: 0;
+            top:-21%;
+            left:-25%;
+            width: 400px;
+            height:230px;
+            background:inherit; 
+              /* filter: blur(2px); */
+              filter: blur(1.5px);
         }
     }
-     
      .box-list_buttons{
+         position: relative;
+         top:42%;
          z-index: 2;  
-         color:white;
+         color:black;
          display: flex;
          flex-direction: row;
          justify-content: center;
@@ -86,7 +103,8 @@
          justify-content: center;
          background-color: transparent;
          border: none;
-         font-size: 0.6em; 
+         font-size: 0.4em;
+         font-weight:500; 
      }
      
  
@@ -95,7 +113,7 @@
     height:0.4em;
     content:"";
     margin-top:0.3em;
-    background-color: white;
+    background-color: black;
 }
 .slide:after{
     width: 0.4em;
@@ -105,4 +123,4 @@
     background-color: transparent;
 }
 
- 
+}

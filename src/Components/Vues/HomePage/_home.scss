@@ -19,13 +19,43 @@ body > #root > div {
 .container-home{
     .container-section1{
         z-index: 2;  
-        width: 600px; 
+        width: 400px; 
         margin: 0 auto;
-        padding-bottom: 100px;
         display:flex;
         flex-direction: row;
         justify-content: center;
         flex-wrap: wrap;
+        .title-section{
+            filter:grayscale(100%);
+            z-index:3;
+            position: relative;
+            left: -26vw;
+            top: 5vh;
+            width: 100px;
+            color: black;
+            padding:0;
+            margin:0;
+            font-size: 0.7em;
+           /*  background-color: #24292E; */
+        }
+        .title-section::after{
+            
+            content:"";
+            z-index:-1;
+            position: absolute;
+            top:4px;
+            left:-4px;
+            background: transparent;
+            border-bottom: 0.5px solid black;
+            border-left: 0.5px solid black;
+            transform: scaleX(1);
+            transform-origin: bottom left;
+            height: 70%;
+            width: 120px;
+            text-align: center;
+            
+        }
+        
     .box-text{
         z-index: 2; 
         flex:100%;
@@ -35,17 +65,12 @@ body > #root > div {
         .text{
             color: $primary;
             opacity: 1;
-            font-size: 0.7em;
+            font-size: 0.5em;
         /*  background-color: rgba(0, 0, 0,0.1); */
         }
         .text.left{
             text-align: left;
             margin-left:2em;
-            margin-bottom:0.2em;
-        }
-        .text.center{
-            text-align: left;
-            margin-left: 4em;
         }
     }
     ul{
@@ -53,20 +78,24 @@ body > #root > div {
         list-style: none;
         flex-direction: row;
         z-index:1;
+        font-size: 0.5em;
         li a{
             position: relative;
             text-decoration: none;
             color :black;
-            margin: 0.5em;
+            margin: none;
+            margin-left: 0.5em;
+            margin-right: 0.5em;
             background: white;
+            font-size: 1em;
         }
         li a::after{
             z-index:10000;
             content: "";
             position: absolute;
-            top: 20px;
-            left: 0;
-            width: 70px;
+            top: 10px;
+            left: 1px;
+            width: 35px;
             height: 1px;
             transform: scaleX(1);
             transform-origin: bottom left;
@@ -81,12 +110,14 @@ body > #root > div {
     }
     
     #arrow-down1 {
+        position: relative;
+        left:-10vw;
         z-index: 3; 
         color: black;
         font-size: 1.5em;
-        text-align: center;
+        text-align: right;
         opacity: 1;
-        flex:100%;
+        width: 100vw;
     }
 }
 #arrow-down2 {

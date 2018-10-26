@@ -72,20 +72,19 @@ class CarouselHome extends Component {
 
 
         return (
-
-
-           
                 <div id='box-carousel' style={{backgroundImage: 'url('+data[this.state.activeIndex].url+')'}}>
                     <div className='box-title-project'>
-                        <h3 className='title-categorie'>{data[this.state.activeIndex].cat}</h3>
-                        <h2 className='title-grid'>{data[this.state.activeIndex].title}</h2>
-                        <button className='button'>See more</button>
+                        <div className='box-title-project--text'>
+                            <h3 className='title-categorie'>{data[this.state.activeIndex].cat}</h3>
+                            <h2 className='title-grid'>{data[this.state.activeIndex].title}</h2>
+                            <button className='button'>See more</button>
+                        </div>
+                        <div className='box-title-project--blur'></div>
                      </div>
                     <ol className='box-list_buttons'>
                         {setListButtons}
                     </ol>
                 </div>
-          
           )
     }
 }

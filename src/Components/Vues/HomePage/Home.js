@@ -31,13 +31,11 @@ export default class HomePage extends Component {
                 <div className='container-background2'>
                 </div>
                 <div className='container-section1'>
+                <div class="title-section">HIGHLIGHT</div>
                     <CarouselHome />
                     <div className='box-text'>
                         <p className='text left'>
-                            "Hi, I'm Paul. Im a full stack Web Developer
-                        </p>
-                        <p className='text center'>
-                        especially interested by JavaScript environment."
+                            "Hi, I'm Paul. Im a full stack Web Developer especially interested by JavaScript environment."
                         </p>
                     </div>
                     <ul>
