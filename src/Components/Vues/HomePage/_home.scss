@@ -2,7 +2,6 @@
 html {
     /* width: 100vw; */
     margin: 0 auto;
-   
 }
 #blockColorblindContent {
     display: none;
@@ -11,7 +10,7 @@ html {
 #root{
     /* width: 100vw; */
     margin: 0 auto;
-   
+    font-size: 30px;
     /* overflow-x: initial; */
 }
 body > #root > div {
@@ -22,7 +21,7 @@ body > #root > div {
     .container-section1{
         height: calc(100vh - 56px);
         z-index: 2;  
-        width: 400px; 
+        width: 50vw; 
         margin: 0 auto;
         display:flex;
         flex-direction: row;
@@ -32,7 +31,6 @@ body > #root > div {
         background-color: transparent;
         
         .title-section{
-            filter:grayscale(100%);
             z-index:3;
             position: relative;
             left: -100px;
@@ -49,15 +47,15 @@ body > #root > div {
             content:"";
             z-index:-1;
             position: absolute;
-            top:4px;
-            left:-4px;
+            top:0.4em;
+            left:-0.4em;
             background: transparent;
             border-bottom: 0.5px solid black;
             border-left: 0.5px solid black;
             transform: scaleX(1);
             transform-origin: bottom left;
             height: 70%;
-            width: 100px;
+            width: 150%;
             text-align: center;
             
         }
@@ -130,8 +128,9 @@ body > #root > div {
     }
 }
     .container-section2{
-        z-index: 2;   
-        width: 400px; 
+        z-index: 30;   
+        width: 50vw;
+        height:100%; 
         margin: 0 auto;
         display:flex;
         flex-direction: row;
@@ -155,15 +154,15 @@ body > #root > div {
             content:"";
             z-index:-1;
             position: absolute;
-            top:4px;
-            left:-40px;
+            top:0.4em;
+            left:-1em;
             background: transparent;
             border-bottom: 0.5px solid black;
             border-right: 0.5px solid black;
             transform: scaleX(1);
             transform-origin: bottom left;
             height: 70%;
-            width: 100px;
+            width: 150%;
             text-align: right;
         }
         #arrow-down2 {
@@ -189,9 +188,9 @@ body > #root > div {
         }
     }
     .container-section3{
-        height: calc(100vh - 56px);
-        z-index: 2;  
-        width: 400px; 
+        z-index: 30;   
+        width: 50vw;
+        height:calc(100vh - 56px); 
         margin: 0 auto;
         display:flex;
         flex-direction: row;
@@ -201,32 +200,32 @@ body > #root > div {
         background-color: transparent;
         
         .title-section3{
-            filter:grayscale(100%);
-            z-index:3;
+            z-index:30;
             position: relative;
             left: -100px;
-            top: 5vw;
+            top: 0vw;
             width: 100px;
             color: black;
             padding:0;
-            margin:0;
-            margin-bottom:3em;
+            margin-bottom:0em;
             font-size: 0.7em;
+           /*  background-color: #24292E; */
         }
         .title-section3::after{
             content:"";
-            z-index:-1;
+            z-index:35;
             position: absolute;
-            top:4px;
-            left:-4px;
+            top:0.4em;
+            left:-0.4em;
             background: transparent;
-            border-bottom: 0.5px solid black;
-            border-left: 0.5px solid black;
+            border-bottom: 1px solid black;
+            border-left: 1px solid black;
             transform: scaleX(1);
             transform-origin: bottom left;
             height: 70%;
-            width: 100px;
+            width: 150%;
             text-align: center;
+            
         }
 
         #arrow-up2{ 

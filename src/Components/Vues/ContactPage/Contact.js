@@ -15,7 +15,7 @@ class Contact extends Component {
             text-decoration: none;
             border: none;
             margin-top:1em;
-            width: 50px;
+            width: 5em;
             text-align: center;
             color: black;
             ::after{
@@ -27,7 +27,7 @@ class Contact extends Component {
                 top:100%;
                 left:0;
                 width:100%;
-                height: 0.5px;
+                height: 1px;
                 z-index: 0;
                 transform: scaleX(1);
                 transform-origin: bottom left;

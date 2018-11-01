@@ -18,7 +18,7 @@ header {
     justify-content: space-around;
     align-items: flex-start;
     margin: 0 auto;
-    height: 50px;
+    height: 10vh;
     width: 100%;
     background-color: white;
     border-bottom: 0.2px solid rgba(0, 0, 0,0.1);
@@ -67,7 +67,7 @@ header {
         flex-direction: column;
         flex-wrap: nowrap;
         width:50%;
-        height:50px;
+        height: 100%;
         h1 {
             text-align: center;
             color: $primary;
@@ -79,8 +79,8 @@ header {
             color:black;
         }
         .pointer-nav{
-            min-width: 3px;
-            min-height: 3px;
+            min-width: 5px;
+            min-height: 5px;
             background-color: red;
            
         }

@@ -24,6 +24,7 @@ class Portfolio extends Component {
     render() {
         const Container = styled.div`
             z-index: 100;
+            position :relative;
             display: flex;
             flex-direction: row;
             justify-content: center;
@@ -32,12 +33,13 @@ class Portfolio extends Component {
             margin-top: 1em;
             margin: 0 auto;
             background-color: transparent;
-            width: 400px;  
+            width: 50vw;  
         `
        
         const FlipBox = styled.div`
-            width:200px;
-            height:105px;
+
+            width:25vw;
+            height: 15vw;
             font-size: 1em;
             background-color: white;
             perspective: 1000px;
@@ -63,7 +65,7 @@ class Portfolio extends Component {
             align-items: center;
             flex-wrap: wrap;
             background: ${props => props.background};
-            filter: grayscale(100%);
+            filter: sepia(90%);
             background-size: cover;
             position: absolute;
             font-size: 0.8em;
@@ -79,8 +81,7 @@ class Portfolio extends Component {
             justify-content:center;
             align-items: center;
             flex-wrap: wrap;
-            background: #313443;
-            background-size: cover;
+            background: #404352;
             position: absolute;
             font-size: 0.8em;
             width:100%;
@@ -117,7 +118,7 @@ class Portfolio extends Component {
                 font-size: 0.7em;
                 text-decoration: none;
                 border: none;
-                width: 50px;
+                width: 5em;
                 text-align: center;
                 ::after{
                     content:"";
