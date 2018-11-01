@@ -4,6 +4,8 @@ import styled from 'styled-components';
 class Header2 extends Component {
     render() { 
         const Header = styled.div `
+            position: fixed;
+            z-index:5;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -11,6 +13,7 @@ class Header2 extends Component {
             height: 30px;
             border-bottom: 0.2px solid rgba(0, 0, 0,0.2);
             color:black;
+            background-color:white;
             .box-left{
                 display:flex;
                 justify-content:space-evenly;
@@ -40,7 +43,7 @@ class Header2 extends Component {
             } 
         `
         return (
-            <div>
+            
                 <Header id='header' className='header'>
                     <div className='box-left'>
                         <Link to='/'><i id='arrow-left' class="fas fa-arrow-left"></i></Link>
@@ -52,7 +55,7 @@ class Header2 extends Component {
                         <li><a href="https://github.com/makemyA"><i class="fab fa-github-alt"></i></a></li>
                     </ul>
                 </Header>
-            </div>
+           
           );
     }
 }

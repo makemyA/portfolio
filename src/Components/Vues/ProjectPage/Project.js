@@ -9,8 +9,8 @@ class Project extends Component {
         super(props);
         this.state = {
             video: true,
-            classNameVideo:'',
-            classNameMd:'hide',
+            classNameVideo:'front',
+            classNameMd:'back',
             iconswitch: <i class="fas fa-toggle-on reverse"></i>,
             videoUrl: 'https://youtu.be/jSZTI6J4Jtk',
           }
@@ -34,33 +34,35 @@ class Project extends Component {
     render() {
         
         const id= this.props.match.params.id;
-        const url= bdd.map((item)=>item.url);
+        const video =bdd.map((item)=>item.video);
         const title= bdd.map((item)=>item.title);
         const readme= bdd.map((item)=>item.readme);
-        const showPicture= ()=> url[id-1];
+        const showVideo= ()=> video[id-1];
         const showTitle= ()=> title[id-1];
         const showReadme =()=> readme[id-1];
         const toggleVideo= ()=> this.setState({
             video: this.state.video?false:true,
-            classNameVideo: this.state.video?'hide':'',
-            classNameMd: this.state.video?'':'hide',
+            classNameVideo: this.state.video?'back':'front',
+            classNameMd: this.state.video?'front':'back',
             iconswitch: this.state.video?<i class="fas fa-toggle-on"></i>:<i class="fas fa-toggle-on reverse"></i>,
         });
         const Container = styled.div`
             width: 100vw;
             display:flex;
-            justify-content:flex-start;
-            align-items:center;
+            justify-content:center;
+            align-items:flex-start;
             flex-wrap: wrap;
             
         `
         const Title = styled.div`
             display: flex;
+            position: relative;
+            z-index:0;
             flex-direction: column;
             justify-content: flex-start;
             align-items:center;
             width: 40%;
-            margin-top: 1em;
+            margin-top: 3em;
             h2{
                 font-size:1em;
                 color:black;
@@ -86,26 +88,32 @@ class Project extends Component {
         `
         const Section = styled.div`
         position: relative;
-        z-index:2;
         display:flex;
         height: 100%;
         width: 600px;
         justify-content: space-around;
         align-items: flex-start;
-        flex-wrap: nowrap;
+        flex-wrap: wrap;
         overflow: hidden;
         margin: 0 auto;
         
         `
-        const BoxVideo = styled.div`
-            z-index:30;
+        const BoxVideo = styled.video`
+         
             width: 400px;
             height: 210px;
-            background:${props => props.background};
+            source:${props => props.src};
             background-size: cover;
-            margin: 2em;
-            .hide{
-                display:none;
+            margin: 2em 2em 0 0 ;
+            &.back{
+                position: fixed;
+                z-index:30;
+                opacity: 0.1;
+                left:0;
+            }
+            &.front{
+                position: fixed;
+                z-index:50;
             }
             `
         const Card = styled.div`
@@ -113,13 +121,13 @@ class Project extends Component {
             flex-direction: column;
             justify-content:space-evenly;
             align-items:flex-start;
+            flex:100%;
             width: 140px;
             height: 210px;
             background-color: white;
             color: black;
-            border: 0.5px solid black;
-            margin-top: 2em;
-            margin-right:1em;
+            border: .2px solid rgba(0, 0, 0, 0.2);
+            margin: 2em 2em 0 0 ;
             h2{
                 font-size: 0.8em;
                 margin-left:0.5em;
@@ -127,16 +135,23 @@ class Project extends Component {
         `
         const Md = styled.div`
             display:flex;
+           
             justify-content: center;
             align-items: center;
             width: 400px;
             font-size:0.6em;
-            margin-top: 2em;
-            padding-top:0em;
-            padding-bottom:0;
-            border: 0.5px solid black;
-            .hide{
-                display:none;
+            margin: 3em 2em 0 0 ;
+            border: .2px solid rgba(0, 0, 0, 0.2);
+            
+            &.back{
+                position: absolute;
+                z-index:30;
+                opacity: 0.1;
+                left:0;
+            }
+            &.front{
+                position: absolute;
+                z-index:50;
             }
             h1{
                 font-size:3em;
@@ -162,23 +177,40 @@ class Project extends Component {
                 <Title>
                     <h2>{showTitle()}</h2>
                     <div>
-                        <span>VIDEO</span>
-                            <button onClick={()=>toggleVideo()}>{this.state.iconswitch}</button>
-                        <span>README</span>
+                        <button onClick={()=>toggleVideo()}>
+                            <span>VIDEO</span>
+                                {this.state.iconswitch} 
+                            <span>README</span>
+                        </button>
                     </div>
               
                 </Title>
                 <Section>
                     
-                    <video width="320" height="240" loop autoPlay>
-                        <source src="/video.mp4" type="video/mp4"/>
+                    <BoxVideo id={this.state.classNameVideo} className={this.state.classNameVideo} width="100%" height="100%" loop autoPlay>
+                        <source src={showVideo()} type="video/mp4"/>
                         Votre navigateur ne supporte pas la balise vidéo.
-                    </video>
-                    <Md id='md' className={this.state.classNameMd}>
-                        <Markdown>{showReadme()}</Markdown>
+                    </BoxVideo>
+                    <Md id={this.state.classNameMd} className={this.state.classNameMd}>
+                        <Markdown style={{width:'100%', height: '100%'}}>{showReadme()}</Markdown>
                     </Md>
                     
                     <Card className='id-card'>
+                        <h2>When</h2>
+                        <h2>role</h2>
+                        <h2>what</h2>
+                    </Card>
+                    <Title>
+                    <h2>{showTitle()}</h2>
+                    <div>
+                        <button onClick={()=>toggleVideo()}>
+                            <span>VIDEO</span>
+                                {this.state.iconswitch} 
+                            <span>README</span>
+                        </button>
+                    </div>
+                </Title>
+                <Card className='id-card'>
                         <h2>When</h2>
                         <h2>role</h2>
                         <h2>what</h2>
