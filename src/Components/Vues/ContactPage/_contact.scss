@@ -11,8 +11,11 @@
     align-items: center;
     flex-wrap: wrap;
     } input{
-        margin: 1em;
-        min-width: 50vw;
+        margin: 1.5em;
+        min-width: 400px;
+        border: none;
+        border-bottom: 0.5px solid black;
+        font-size:0.5em;
     }
     .button{
         background-color: transparent;

@@ -1,6 +1,6 @@
 @import './mixin';
 @import './color';
- header::after{
+  header::after{
     z-index: 1;
     position: absolute;
     top:40%;
@@ -10,7 +10,7 @@
     width: 100vw;
     background: -webkit-linear-gradient(-180deg, rgba(245, 245, 245,1), rgb(255, 255, 255));
     background: linear-gradient(-180deg, rgba(245, 245, 245,1), rgb(255, 255, 255));
-} 
+}  
 header {
     @include flexCenter;
     flex-wrap:nowrap;
@@ -18,17 +18,18 @@ header {
     justify-content: space-around;
     align-items: flex-start;
     margin: 0 auto;
-    height: 70px;
+    height: 50px;
     width: 100%;
     background-color: white;
+    border-bottom: 0.2px solid rgba(0, 0, 0,0.1);
     .menu-media {
         @include flexCenter;
         flex-wrap: nowrap;
         flex-direction: row;
         justify-content:center;
         align-self: flex-start;
-        margin-top:1em;
-        width: 15%;
+        margin-top:0.5em;
+        width: 10%;
         list-style: none;
         color: black;
        li {
@@ -36,6 +37,7 @@ header {
            color: black;
            a{
                color: black;
+               font-size: 0.6em;
            }
            a:hover{
                color:lightgray;
@@ -43,21 +45,21 @@ header {
        }
     }
     .box-presentation{
-        width: 15%;
+        width: 10%;
         margin-top: 0.5em;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: flex-start;
-        line-height: 0.1em;
+        line-height: .01em;
          .title{
-            font-size: 1.2em;
+            font-size: 0.6em;
             text-align: left;
             margin: 0;
             padding: 0;
         }
         h3{
-            font-size: 0.5em;
+            font-size: 0.4em;
         }
      }
     .box_menu{
@@ -65,16 +67,20 @@ header {
         flex-direction: column;
         flex-wrap: nowrap;
         width:50%;
-        height:70px;
+        height:50px;
         h1 {
             text-align: center;
             color: $primary;
-            font-size: 1.5em;
+            font-size: 1em;
           
         }
+        h1 a {
+            text-decoration: none;
+            color:black;
+        }
         .pointer-nav{
-            min-width: 5px;
-            min-height: 5px;
+            min-width: 3px;
+            min-height: 3px;
             background-color: red;
            
         }
@@ -85,7 +91,7 @@ header {
             list-style: none;
             margin: 0.5em 0 0 0;
             text-transform: uppercase;
-            font-size: 0.6em;
+            font-size: 0.5em;
             color:lightgray;
             a{
                 text-decoration: none;

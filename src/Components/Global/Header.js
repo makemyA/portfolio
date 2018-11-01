@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom'
 class Header extends Component {
     
     render() { 
         return (
             <div>
-                <header className='header'>
+                <header id='header' className='header'>
                     <div className='box-presentation'>
                         <h1 className='title'>WEB</h1>
                         <br/>
@@ -12,7 +13,7 @@ class Header extends Component {
                         <h3>React - React Native - Javascript - PHP - HTML - CSS - Bootstrap</h3>                    
                     </div>
                     <div className='box_menu'>
-                        <h1>makemyA</h1>
+                        <Link to="/"><h1>makemyA</h1></Link>
                         <div className='pointer-nav'></div>
                         <ul className='menu-navigation'>
                             <li><a href="#section2">Portfolio</a></li>

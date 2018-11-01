@@ -15,11 +15,11 @@ class CarouselHome extends Component {
   }
   componentDidUpdate(){
       console.log("component did update");
-      console.log(this.state.activeIndex);
+      /* console.log(this.state.activeIndex); */
   };
   componentWillUpdate(){
       console.log("component will update");
-      console.log(this.state.data[this.state.activeIndex].id);
+      /* console.log(this.state.data[this.state.activeIndex].id); */
    
   }
   componentWillMount(){
@@ -41,36 +41,23 @@ class CarouselHome extends Component {
         }
     }
      
-    nextImage=()=>{
+    nextImage=(e)=>{
         const { activeIndex, data} = this.state;
         if(activeIndex<data.length-1){
             this.setState({activeIndex: activeIndex+1});
-            console.log(activeIndex+1)
-        }   
+        } 
+        if(activeIndex === data.length-1){
+            this.setState({activeIndex: 0})
+        }
+ 
     }
- /*    choseImage= ()=>{
-        const {activeIndex, data}= this.state;
-        this.setState({activeIndex: data.id});
-    } */ 
-
     render() {
         const {data} = this.state;
-        console.log(this.state.activeIndex+'ème item');
-        console.log(bdd.length+'item');
-
-             
         const setListButtons = data.map((item, index)=>{
             let computedClass= index ===(this.state.activeIndex)? ' slide transition':' slide';
                return  <button key={item.id} className={"list_buttons"+ computedClass} onClick={()=>this.setState({activeIndex:item.id-1})}>{item.id}</button>
         }
         )
-        /* className={
-            "badge " +
-            (this.state.value ? "badge-primary " : "badge-danger ") +
-            " m-4"
-          } */
-
-
         return (
                 <div id='box-carousel' style={{backgroundImage: 'url('+data[this.state.activeIndex].url+')'}}>
                     <div className='box-title-project'>
