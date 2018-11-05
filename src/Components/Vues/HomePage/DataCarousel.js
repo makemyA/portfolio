@@ -43,5 +43,6 @@ export const bdd =[
         readme: "null",
         url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmo5KTrQ5fczNNBcTfk5Z9tZpFKJmXF3iCXOLySRJ2M3LFcU_TMw'
     },
- 
 ]
+
+ 

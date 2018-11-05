@@ -10,7 +10,7 @@ class Project extends Component {
         this.state = {
            front: true, 
            class:'',
-           overflow:'',
+           overflow:'hidden',
            pointerEvent: 'auto',
            title: bdd[this.props.match.params.id-1].title,
           }
@@ -138,6 +138,7 @@ class Project extends Component {
         width: 100%;
         height: 100vh;
         overflow-y: ${props => props.overflow};
+        overflow-x: hidden;
         background : url(${props => props.background}) no-repeat;
         background-size: cover;
         flex-direction: row;
@@ -214,7 +215,7 @@ class Project extends Component {
         `
         const Md = styled.div`
             position: absolute;
-            z-index: 1000;
+            z-index: 10;
             display:flex;
             justify-content: center;
             align-items: flex-start;
@@ -223,11 +224,11 @@ class Project extends Component {
             border: .2px solid rgba(0, 0, 0, 0.2);
             transform: rotateY(180deg);
             backface-visibility: hidden;
-            background: rgba(230, 230, 230, 1);
+            background: rgba(230, 230, 230, 0.9);
             filter:grayscale(40%) sepia(10%);
             color: black;
             &.readme::after{
-                z-index:0;
+                z-index:50;
                 content:"";
                 text-align:center;
                 position:absolute;
@@ -237,7 +238,7 @@ class Project extends Component {
                 height:100%;
                 background : url(${props => props.background}) no-repeat;
                 filter:sepia(40%) grayscale(100%);
-                opacity: 0.1;
+                opacity: 0.2;
                 background-size: cover;
                 background-attachment: fixed;
                 background-position: center;
