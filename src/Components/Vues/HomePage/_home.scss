@@ -2,6 +2,7 @@
 html {
     /* width: 100vw; */
     margin: 0 auto;
+    background-color: transparent;
 }
 #blockColorblindContent {
     display: none;
@@ -15,22 +16,25 @@ html {
 }
 body > #root > div {
     height: 100%;
+    background-color: transparent;
   }
 .container-home{
    
     .container-section1{
-        height: calc(100vh - 56px);
+        position: relative;
+        height: calc(100vh - 86px);
         z-index: 2;  
-        width: 50vw; 
-        margin: 0 auto;
+        width: 100vw;
+        margin: 0em auto 0 auto;
         display:flex;
         flex-direction: row;
         justify-content: flex-start;
         align-items: center;
         flex-wrap: wrap;
-        background-color: transparent;
+        font-size: 2.5em;
+        background-color:transparent;
         
-        .title-section{
+        .title-section1{
             z-index:3;
             position: relative;
             left: -100px;
@@ -38,7 +42,7 @@ body > #root > div {
             width: 100px;
             color: black;
             padding:0;
-            margin-bottom:0em;
+            margin-top:em;
             font-size: 0.7em;
            /*  background-color: #24292E; */
         }
@@ -57,65 +61,7 @@ body > #root > div {
             height: 70%;
             width: 150%;
             text-align: center;
-            
         }
-    
-    .box-text{
-        position: relative;
-        border-bottom: .2px solid rgba(0, 0, 0, 0.2);
-        z-index: 2; 
-        width: 80%;
-        margin: 0 auto; 
-        /* margin-bottom:2%;
-        margin-top: 3%; */
-        .text{
-            color: $primary;
-            opacity: 1;
-            font-size: 0.5em;
-            margin-bottom:2em;
-        }
-        .text.left{
-            text-align: center;
-        }
-        ul{
-            display: flex;
-            list-style: none;
-            flex-direction: row;
-            z-index:1;
-            font-size: 0.5em;
-            padding-bottom: 10px;
-            margin-left:1em;
-            justify-content: center;
-            li a{
-                position: relative;
-                text-decoration: none;
-                color :black;
-                margin: none;
-                margin-left: 0.5em;
-                margin-right: 0.5em;
-                background: white;
-                font-size: 1em;
-            }
-            li a::after{
-                z-index:10000;
-                content: "";
-                position: absolute;
-                top: 10px;
-                left: 1px;
-                width: 35px;
-                height: 1px;
-                transform: scaleX(1);
-                transform-origin: bottom left;
-                background: black;
-                z-index: -1;
-                transition: transform 0.3s;
-            }
-            li a:hover::after{
-                z-index:10000;
-                transform: scaleX(0);
-            }
-        }
-    }
     #arrow-down1 {
         position: relative;
         left:10vw;
@@ -129,7 +75,7 @@ body > #root > div {
 }
     .container-section2{
         z-index: 30;   
-        width: 50vw;
+        width: 80vw;
         height:100%; 
         margin: 0 auto;
         display:flex;
@@ -137,12 +83,14 @@ body > #root > div {
         justify-content: flex-start;
         align-items: center;
         flex-wrap: wrap;
-        background-color: transparent;
+        background:white;
+        background-attachment: fixed;
+        background-position: center;
         .title-section2{
-            z-index:100;
+            z-index:3;
             position: relative;
-            left: 100%;
-            top: 0vw;
+            left: 90%;
+            top: 10vw;
             width: 100px;
             color: black;
             padding:0;
@@ -188,7 +136,7 @@ body > #root > div {
         }
     }
     .container-section3{
-        z-index: 30;   
+        z-index:3;   
         width: 50vw;
         height:calc(100vh - 56px); 
         margin: 0 auto;
@@ -197,7 +145,9 @@ body > #root > div {
         justify-content: flex-start;
         align-items: center;
         flex-wrap: wrap;
-        background-color: transparent;
+        background:white;
+        background-attachment: fixed;
+        background-position: center; 
         
         .title-section3{
             z-index:30;

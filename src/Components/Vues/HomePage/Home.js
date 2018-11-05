@@ -7,11 +7,22 @@ import Contact from '../ContactPage/Contact'
 import Presentation from './Presentation'
 import * as Scroll from 'react-scroll';
 import { Link, Element , Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'
+import { cpus } from 'os';
 export default class HomePage extends Component {
+   
     
-
-     
+    componentWillMount(){
+        window.scrollTo(0,0);
+    }
+    componentDidMount(){
+    }
+    componentWillUpdate(){
+    
+    }
+   
     render() {
+        
+        
        
         let eventHandler= ()=>console.log(window.pageXOffset+window.pageYOffset);
         window.addEventListener('scroll', eventHandler);
@@ -27,12 +38,11 @@ export default class HomePage extends Component {
         } 
          unscroll() */
         return(
-            <div className='container-home'>
+            <div id='containerHome' className='container-home'>
                 <Header />
                 <Element name='highlight'>
                     <div id='section1' className='container-section1'>
-                        <div class="title-section">HIGHLIGHT</div>
-                        <CarouselHome />
+                        <div class="title-section1">Intro</div>
                         <Presentation />
                         <Link to='portfolio' spy={true} smooth={true}><a href='#section2'><i id ='arrow-down1'className="fas fa-angle-down"></i></a></Link>
                     </div>

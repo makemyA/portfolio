@@ -1,28 +1,31 @@
 @import './mixin';
 @import './color';
-  header::after{
-    z-index: 1;
+  /* header::after{
+    z-index: -3;
     position: absolute;
     top:40%;
     content:"";
-     overflow: hidden;
-    height: 100%;
+    height: 100vh;
     width: 100vw;
     background: -webkit-linear-gradient(-180deg, rgba(245, 245, 245,1), rgb(255, 255, 255));
     background: linear-gradient(-180deg, rgba(245, 245, 245,1), rgb(255, 255, 255));
-}  
+}   */
 header {
     @include flexCenter;
+    position: fixed;
+    z-index:3;
     flex-wrap:nowrap;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: flex-start;
     margin: 0 auto;
-    height: 10vh;
+    height: 120px;
     width: 100%;
     background-color: white;
     border-bottom: 0.2px solid rgba(0, 0, 0,0.1);
     .menu-media {
+        position: relative;
+        z-index: 6;
         @include flexCenter;
         flex-wrap: nowrap;
         flex-direction: row;
@@ -45,15 +48,18 @@ header {
        }
     }
     .box-presentation{
-        width: 10%;
+        position: relative;
+        z-index: 6;
+        width: 12%;
         margin-top: 0.5em;
+        margin-left: 0.5em;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: flex-start;
         line-height: .01em;
          .title{
-            font-size: 0.6em;
+            font-size: 0.8em;
             text-align: left;
             margin: 0;
             padding: 0;
@@ -64,14 +70,15 @@ header {
      }
     .box_menu{
         @include flexCenter;
+        position: relative;
+        z-index: 6;
         flex-direction: column;
         flex-wrap: nowrap;
         width:50%;
-        height: 100%;
         h1 {
             text-align: center;
             color: $primary;
-            font-size: 1em;
+            font-size: 2em;
           
         }
         h1 a {

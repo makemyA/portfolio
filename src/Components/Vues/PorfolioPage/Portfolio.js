@@ -30,19 +30,19 @@ class Portfolio extends Component {
             justify-content: center;
             align-items: center;
             flex-wrap: wrap;
-            margin-top: 1em;
-            margin: 0 auto;
+            margin: 5em auto 0 auto;
             background-color: transparent;
-            width: 50vw;  
+            width: 100vw;  
         `
        
         const FlipBox = styled.div`
 
-            width:25vw;
-            height: 15vw;
+            width:30vw;
+            height: 18vw;
             font-size: 1em;
-            background-color: white;
-            perspective: 1000px;
+            margin:0.2em;
+            background: #DDDDDD;
+            perspective: 4000px;
            
             :hover .flipBoxInner{
                 transform: rotateY(180deg);
@@ -65,7 +65,7 @@ class Portfolio extends Component {
             align-items: center;
             flex-wrap: wrap;
             background: ${props => props.background};
-            filter: sepia(90%);
+            filter: sepia(40%);
             background-size: cover;
             position: absolute;
             font-size: 0.8em;
@@ -88,6 +88,7 @@ class Portfolio extends Component {
             height:100%;
             transform: rotateY(180deg);
             backface-visibility: hidden;
+            filter: grayscale(100%);
            
            
            
