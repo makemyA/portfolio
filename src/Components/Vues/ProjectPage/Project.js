@@ -59,7 +59,7 @@ class Project extends Component {
         this.setState({
             front:true,
             class:'',
-            overflow:'',
+            overflow:'hidden',
             pointerEvent:'auto',
         })
     }
@@ -97,23 +97,7 @@ class Project extends Component {
       console.log("component will unmount");
   } 
     render() {
-        let eventHandler= ()=>console.log(window.pageXOffset+window.pageYOffset);
-        window.addEventListener('scroll', eventHandler);
-        const id= this.props.match.params.id;
-        const background =bdd.map((item)=>item.url)
-        const video =bdd.map((item)=>item.video);
-        const title= bdd.map((item)=>item.title);
-        const when= bdd.map((item)=>item.when);
-        const role= bdd.map((item)=>item.role);
-        const what= bdd.map((item)=>item.what);
-        const readme= bdd.map((item)=>item.readme);
-        const showBackground = (element)=> background[id-1+element];
-        const showVideo= (element)=> video[id-1+element-1];
-        const showTitle= ()=> title[id-1];
-        const showReadme =(element)=> readme[id-1+element-1];
-        const showWhen=()=> when[id-1];
-        const showRole=()=> role[id-1];
-        const showWhat=()=> what[id-1];
+       
         const Container = styled.div`
             width: 100vw;
             display:flex;
@@ -268,44 +252,51 @@ class Project extends Component {
                 margin: 0.6em;
             }
             `
-           
-            const showSections = bdd.map((item)=>{
-                let order = 2;
-                let setOrder= id==item.id?1:order++;
-               
-                return(
-                <Section onPointerEnter={this.changeTitle} id={item.id} className='section' style={{order:setOrder}} overflow={this.state.overflow} background ={item.url}>
-                        <FlipBox  pointerEvent={this.state.pointerEvent} id='flipBox'>
+            let eventHandler= ()=>console.log(window.pageXOffset+window.pageYOffset);
+            window.addEventListener('scroll', eventHandler);
+            const id= this.props.match.params.id;
+            const background =bdd.map((item)=>item.url)
+            const video =bdd.map((item)=>item.video);
+            const title= bdd.map((item)=>item.title);
+            const when= bdd.map((item)=>item.when);
+            const role= bdd.map((item)=>item.role);
+            const what= bdd.map((item)=>item.what);
+            const readme= bdd.map((item)=>item.readme);
+            const showBackground = ()=> background[id-1];
+            const showVideo= ()=> video[id-1];
+            const showTitle= ()=> title[id-1];
+            const showReadme =()=> readme[id-1];
+            const showWhen=()=> when[id-1];
+            const showRole=()=> role[id-1];
+            const showWhat=()=> what[id-1];
+            
+        return (
+            <Container >
+                <Header2 />
+                <Section   className='section' overflow={this.state.overflow}  background ={showBackground()}>
+                        <Title>
+                            {showTitle()}
+                        </Title>
+                        <Card className='id-card'>
+                            <h2>When</h2>
+                            <h3>{showWhen()}</h3>
+                            <h2>role</h2>
+                            <h3>{showRole()}</h3>
+                            <h2>what</h2>
+                            <h3>{showWhat()}</h3>
+                        </Card>
+                        <FlipBox>
                             <FlipBoxInner onMouseLeave={this.onMouseLeave} className={this.state.class}>
                                 <BoxVideo onClick={this.showBack} loop autoPlay>
-                                    <source src={item.video} type="video/mp4"/>
+                                    <source src={showVideo()} type="video/mp4"/>
                                     Votre navigateur ne supporte pas la balise vidéo.
                                 </BoxVideo>
-                                <Md  onClick={this.showFront}  id='markdown-container'className='readme readme-1' background ={showBackground(id)}>
-                                    <Markdown style={{width:'100%', height: '100%'}}>{item.readme}</Markdown>
+                                <Md  onClick={this.showFront}  id='markdown-container'className='readme readme-1'>
+                                    <Markdown style={{width:'100%', height: '100%'}}>{showReadme()}</Markdown>
                                 </Md>
                             </FlipBoxInner>
                         </FlipBox>
                     </Section>
-                )
-            }  
-            )
-
-        return (
-            <Container >
-                <Header2 />
-                    <Title>
-                        {this.state.title}
-                    </Title>
-                    <Card className='id-card'>
-                        <h2>When</h2>
-                        <h3>{showWhen()}</h3>
-                        <h2>role</h2>
-                        <h3>{showRole()}</h3>
-                        <h2>what</h2>
-                        <h3>{showWhat()}</h3>
-                    </Card>
-                    {showSections}
             </Container>
           );
     }

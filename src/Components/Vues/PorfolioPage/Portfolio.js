@@ -41,25 +41,18 @@ class Portfolio extends Component {
             height: 18vw;
             font-size: 1em;
             margin:0.2em;
-            background: #DDDDDD;
-            perspective: 4000px;
-           
-            :hover .flipBoxInner{
-                transform: rotateY(180deg);
-            }
-            
+            background: transparent;
             ` 
            
         const FlipBoxInner = styled.div`
             position: relative;
             width:100%;
             height:100%
-            transition: transform 0.5s;
-            transform-style: preserve-3d;
             color:white;
-           
+            
         `    
         const FlipBoxFront = styled.div`
+            position: relative;
             display:flex;
             justify-content:center;
             align-items: center;
@@ -67,28 +60,39 @@ class Portfolio extends Component {
             background: ${props => props.background};
             filter: sepia(40%);
             background-size: cover;
-            position: absolute;
             font-size: 0.8em;
             width:100%;
             height:100%;
-            backface-visibility: hidden;
-            .boxTitleFront{
-                opacity: 1;
-             }
+           
+            :after{
+                position: absolute;
+                top:0;
+                left:0;
+                content:"";
+                height:100%;
+                width:100%;
+                background: yellow;
+                transform: scaleY(0);
+                transition: transform 0.5s;
+            }
+            :after::hover {
+                transform: scaleY(1);
+            }
         `
         const FlipBoxBack = styled.div`
+            position: absolute;
+            z-index:0;
             display:flex;
             justify-content:center;
             align-items: center;
             flex-wrap: wrap;
             background: #404352;
-            position: absolute;
             font-size: 0.8em;
             width:100%;
             height:100%;
-            transform: rotateY(180deg);
-            backface-visibility: hidden;
             filter: grayscale(100%);
+           
+           
            
            
            
