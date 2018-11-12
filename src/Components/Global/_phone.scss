@@ -1,0 +1,55 @@
+html {
+    width: 100vw;
+    margin: 0 auto;
+    background-color: white;  
+}
+h1{
+    margin-bottom: 2em;
+}
+h2,h3{
+}
+header{
+    height: 100px;
+    .box-presentation{
+        width: 20%;
+        .title{
+            font-size: 1em;
+            margin-bottom: 0;
+        }
+        h3{
+            font-size: 0.4em;
+        }   
+    }
+    .box_menu{
+        height: 80px;
+        h1{
+            margin-bottom:0;
+        }
+        .menu-navigation{
+            font-size: 0.7em;
+            width: 50vw;
+        }
+    }
+    .menu-media{
+        width: 20%;
+    }
+}
+ .container-home{
+    .container-section1{
+    width: 100vw;
+        .box_carousel{
+            .box-title-project{
+                
+                .button {
+                    width: 70px;
+                }
+            }
+            
+        }
+        .text-contact{
+            color: $primary;
+            text-align: center;
+            margin:0;
+        }
+    }
+}

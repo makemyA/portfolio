@@ -1,6 +1,13 @@
+
+@import "Components/Global/font";
 @import 'Components/Global/reset';
 @import 'Components/Global/header';
+@import 'Components/Global/header2';
 @import 'Components/Global/color';
-@import 'Components/Global/font';
 @import 'Components/Global/mixin';
-@import 'Components/Vues/HomePage/_home.scss';
+@import 'Components/Vues/HomePage/home';
+@import 'Components/Vues/ContactPage/contact';
+@import 'Components/Vues/ProjectPage/project';
+@media only all and (max-width: 576px) {
+@import 'Components/Global/phone';
+}

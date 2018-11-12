@@ -1,40 +1,140 @@
-/* .carousel-box{
-    
-    .carousel{
-        margin: 4rem auto;
-        padding: 0;
-         .carousel-indicators li {
-            position: relative;
-            top: 30px;
-            margin: 1rem;
-            height: 10px;
-            width: 10px;
-            border-radius: 0px;
-            border: none;
-    
-        }
-    }
-    .list-decimal{
-        @include flexCenter;
-           color : red;
-           position: relative;
-           top: -100px;
-           left: 34.5%;
-           width: 180px;
-           & li{
-               color: white;
-               margin-left: 1.9rem;
-           }
-         
-    }
-}
- */
 
- .box_carousel{
+
+ #box-carousel{
+      /* filter: grayscale(10%) contrast(100%);  */
+      /*filter: sepia(0%) grayscale(50%)  contrast(70%);  */ 
+     position: relative;
+     z-index: 1; 
+     display:flex;
+     flex-wrap: wrap;
+     flex-direction: column;
+     justify-content: flex-end;
+     align-items: center;
      background-repeat: no-repeat;
      background-size: cover;
-     border: 1px solid black;
-     height: 300px;
- }
+     flex:100%;
+     height: 25vw;
+     margin: 0 auto;
+     .box-title-project{
+         display:flex;
+         justify-content: center;
+         align-items: center;
+        position: absolute;
+        background: inherit;
+        top:35%;
+        left:20%;
+        width: 60%;
+        height: 30%;
+        overflow: hidden;   
+        .box-title-project--text{
+            z-index: 1;
+           /*  background: rgba(255, 255, 255,0.4); */
+            width: 100%;
+            margin: 0 auto;
+            color:black;
+            display:flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
+           
+            height: 100%;
+            .title-categorie{
+                z-index: 1;
+                font-size: 0.7em;
+            }
+            .title-grid{
+            z-index: 1;
+            font-size: 0.8em;
+            font-weight: 550;
+            }
+            .button{
+                position: relative;
+                background-color: transparent;
+                z-index: 1;
+                font-size: 0.7em;
+                text-decoration: none;
+                border: none;
+                width: 8em;
+                text-align: center;
+            }
+            .button::after{
+                content:"";
+                position: absolute;
+                top:1.3em;
+                left:1.5em;
+                width:60%;
+                background-color: black;
+                height: 1.5px;
+                z-index: 2;
+                transform: scaleX(1);
+                transform-origin: bottom left;
+                transition: transform 0.3s;
+            }
+            .button:hover::after{
+                transform: scaleX(0);
+            } 
+        }
+        .box-title-project--blur{
+            position: absolute;
+            z-index: 0;
+            top:-115%;
+            left:-34%;
+            width: 50vw;
+            height:25vw;
+            background:inherit; 
+              /* filter: grayscale(100%); */
+               filter: blur(10px);
+        }
+    }
+     .box-list_buttons{
+         position: relative;
+         top:-10px;
+         z-index: 2;  
+         color:black;
+         display: flex;
+         flex-direction: row;
+         justify-content: center;
+         align-items: flex-end;
+         justify-content: space-evenly;
+         flex-wrap: nowrap;
+         width: 20%;
+     }
+     /* .box-list_buttons::after{
+         z-index:-1;
+         border-radius: 1px;
+         content:"";
+         position: absolute;
+         top:0;
+         left:0;
+         height:100%;
+         width:100%;
+         background-color: rgba(255, 255, 255,0.2);
+     } */
+     .list_buttons{
+         display:flex;
+         flex-direction: column;
+         align-items: center;
+         justify-content: center;
+         background-color: transparent;
+         border: none;
+         font-size: 0.5em;
+         font-weight:500; 
+     }
+     
  
-    
+.slide.transition:after{
+    width: 0.4em;
+    height:0.4em;
+    content:"";
+    margin-top:0.3em;
+    background-color: black;
+}
+.slide:after{
+    width: 0.4em;
+    height:0.4em;
+    content:"";
+    margin-top: 0.3em;
+    background-color: transparent;
+}
+
+}

@@ -1,35 +1,101 @@
 @import './mixin';
 @import './color';
+@font-face {
+
+    font-family: 'mplus' ;
+    src: url('/portfolio_makemya/src/Components/Vues/HomePage/Assets/mplus-1mn-light.ttf');
+ } 
 header {
     @include flexCenter;
-    flex-wrap:wrap;
-    flex-direction: column;
-    width: 100vw;
-    
+    position: fixed;
+    z-index:500;
+    flex-wrap:nowrap;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin: 0 auto;
+    height: 120px;
+    width: 100%;
+    background-color: white;
+    border-bottom: 0.5px solid rgba(0, 0, 0,0.1);
     .menu-media {
+        position: relative;
+        z-index: 6;
         @include flexCenter;
         flex-wrap: nowrap;
         flex-direction: row;
-        align-self: flex-end;
-        order:1;
-        width: 30vw;
+        justify-content:center;
+        align-self: flex-start;
+        margin-top:0.5em;
+        width: 10%;
         list-style: none;
-       
+        color: black;
+       li {
+           margin-left: 0.9em;
+           color: black;
+           
+           a {
+               color: black;
+               font-size: 0.6em;
+               cursor: pointer;
+               
+           }
+           a:hover{
+               color:lightgray;
+               cursor: pointer;
+           }
+       }
     }
+    .box-presentation{
+        position: relative;
+        z-index: 6;
+        width: 12%;
+        margin-top: 0.5em;
+        margin-left: 0.5em;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        line-height: .01em;
+        background-color:transparent;
+        font-family: 'Share Tech', sans-serif;
+        
+         .title{
+            font-size: 0.8em;
+            text-align: left;
+            margin: 0;
+            padding: 0;
+            color: transparent;
+            filter: grayscale(30%);
+            background-image: url('https://static.lexpress.fr/medias_11703/w_864,h_483,c_crop,x_0,y_173/w_640,h_360,c_fill,g_north/v1513258138/cassiopeia-a-supernova_5992030.jpg');
+            background-repeat: repeat-x;
+            background-size: contain;
+            background-clip: text;
+            animation: animate 10s linear infinite;
+        }
+        h3{
+            font-size: 0.4em;
+        }
+     }
     .box_menu{
         @include flexCenter;
-        order:2;
         position: relative;
-        top:-20px;
+        z-index: 6;
         flex-direction: column;
-        height: 100px;
         flex-wrap: nowrap;
+        width:50%;
         h1 {
             text-align: center;
-            color: $primary;
-            font-size: 4rem;
-           
+            color: black;
+            font-size: 2.2em;
+            font-family: 'Caveat';
+            cursor: pointer;
+          
         }
+         a {
+            text-decoration: none;
+        }
+        
         .pointer-nav{
             min-width: 5px;
             min-height: 5px;
@@ -38,15 +104,37 @@ header {
         }
         .menu-navigation {
             @include flexCenter;
-            width: 100%;
+            width: 50%;
             flex-wrap: nowrap;
             list-style: none;
-            margin: 1rem 0 0 0;
-            
+            margin: 0.5em 0 0 0;
             text-transform: uppercase;
-            
+            font-size: 0.6em;
+            color:lightgray;
+            font-family: 'Share Tech', sans-serif;
+            a{
+                text-decoration: none;
+                color: lightgray;
+            }
+            .current{
+                color: black;
+            }
+            a:hover{
+                color: $primary;
+            }
         }
         
     }
     
 }
+@keyframes animate {
+    from {
+      background-position:  0%  0%;
+    }
+    to {
+      background-position: 100%  0%;
+    }
+  }
+  ji{
+      
+  }

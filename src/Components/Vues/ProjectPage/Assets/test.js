@@ -1,0 +1,7 @@
+  export const project= {
+  "test": {
+    "preview": "# CV\r\n\r\n- **Author:** Paul *\"makemyA\"* Henrot\r\n- **About:** Making a …",
+    "content": "\r\n\r\n# CV\r\n\r\n- **Author:** Paul *\"makemyA\"* Henrot\r\n- **About:** Making a CV\r\n- **Period:** *-Start: 03/06/2018-*\r\n- **Place:** [BeCode](https://becode.org/) bootcamp @[Becentral](https://www.becentral.org/) buildings in Bruxelles\r\n\r\n<p style=\"text-align: center;\">\r\n<img src=\"photos/logo-becode.png\" width=\"80px\" height=\"80px\" alt=\"logo becode\"/>\r\n</p>\r\n\r\n\r\n\r\n## Project Description\r\n\r\n* **Objective**?\r\n\r\nTo be able to make a modern C.V. with html/css tools.\r\n\r\nYou can watch complete instructions [there](https://github.com/becodeorg/lovelace-2/blob/master/Parcours/01-La-prairie/html-css/5-exercice-creer-un-cv.md)\r\n\r\nYou can watch the result [here](https://makemya.github.io/Learning-Environment/5-exercice-creer-un-cv.md/)\r\n\r\n## **Day-1**\r\n\r\n* **Step 1**\r\n\r\nI choice to practice my new skills in bootstrap to make a design, creative and responsive CV.\r\n\r\n* **Step 2**\r\n\r\n\r\nI find a nice CV on pinterest who will be my inspiration for all this work. I dont want to copy it but its easier to start with a real template. See below the cv i choice:\r\n\r\n<p style=\"text-align: center;\">\r\n<img src=\"photos/cv.jpg\" width=\"25%\" height=\"25%\" alt=\"photo cv\"/>\r\n</p>\r\n\r\n\r\n* **Step 3**\r\n\r\nI use bootstrap grid technic to make the global organisation of the CV.\r\n\r\n",
+    "basename": "test"
+  }
+}
