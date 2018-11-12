@@ -3,7 +3,7 @@ export const bdd =[
         id:1,
         title: "PORT Chain - Hackathon",
         cat: 'Hackathon',
-        video: '/portfolio181103.mp4',
+        video: '/interportGoogleSlide.mp4',
         when: '2018',
         role: 'front-end',
         what:'make a prototype for Inter Port',
@@ -14,11 +14,11 @@ export const bdd =[
         id:2,
         title: "Appli Photos - Wedding ju & Marti",
         cat: 'Project',
-        video: '/VideoPortfolio.mp4',
+        video: '/appliphoto.mp4',
         when: '2018',
         role: 'front-end',
         what:'make a photo and video app for the wedding of good friends',
-        readme:'',
+        readme:"# CV\r\n\r\n- **Author:** Paul *\"makemyA\"* Henrot\r\n- **About:** Making a Photo App\r\n- **Period:** *-Start: aout 2018- End: sept 2018*\r\n- **Place:** Home\r\n\r\n\r\n## Project Description\r\n\r\n* **Objective**?\r\n\r\nMake a Photo App for wedding good friends.\r\nPeople can download PWA App, take a picture and send it to a server. A Big screen in the event make pop up new add pictures during the party.\r\n\r\n* **Technology**\r\n    * Javascript\r\n    * Php\r\n    * Html\r\n    * Css ",
         url:'https://images.pexels.com/photos/296649/pexels-photo-296649.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260'
     },
     {

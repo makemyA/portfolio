@@ -1,4 +1,9 @@
 @import './carouselHome';
+@font-face {
+
+    font-family: 'horizon' ;
+    src: url('/portfolio_makemya/src/Components/Vues/HomePage/Assets/Horizon-Regular.ttf');
+ } 
 html {
     /* width: 100vw; */
     margin: 0 auto;
@@ -44,6 +49,7 @@ body > #root > div {
             padding:0;
             margin-top:em;
             font-size: 0.7em;
+            font-family: 'Caveat';
            /*  background-color: #24292E; */
         }
         .title-section::after{
@@ -64,18 +70,17 @@ body > #root > div {
         }
     #arrow-down1 {
         position: relative;
-        left:10vw;
-        top: -40vh;
+        top: -15vh;
+        width: 100vw;
+        text-align:center;
         z-index: 3; 
-        color: black;
-        font-size: 0.8em;
-        text-align: right;
-        font-weight: 600;
+        color: rgba(255,255,255,0.8);
+        font-size: 0.4em;       
     }
 }
     .container-section2{
         z-index: 30;   
-        width: 80vw;
+        width: 80%;
         height:100%; 
         margin: 0 auto;
         display:flex;
@@ -86,33 +91,16 @@ body > #root > div {
         background:white;
         background-attachment: fixed;
         background-position: center;
+        font-family: 'mplus' ;
         .title-section2{
-            z-index:3;
-            position: relative;
-            left: 90%;
-            top: 10vw;
-            width: 100px;
+            width: 100%;
             color: black;
-            padding:0;
-            margin-left:40px;
-            margin-bottom:3em;
+            margin-top: 7em;
             font-size: 0.7em;
+            font-family: 'Caveat';
+            font-weight:700;
         }
-        .title-section2::after{
-            content:"";
-            z-index:-1;
-            position: absolute;
-            top:0.4em;
-            left:-1em;
-            background: transparent;
-            border-bottom: 0.5px solid black;
-            border-right: 0.5px solid black;
-            transform: scaleX(1);
-            transform-origin: bottom left;
-            height: 70%;
-            width: 150%;
-            text-align: right;
-        }
+        
         #arrow-down2 {
             position: relative;
             left:50vw;
@@ -137,45 +125,27 @@ body > #root > div {
     }
     .container-section3{
         z-index:3;   
-        width: 50vw;
+        width: 80%;
         height:calc(100vh - 56px); 
         margin: 0 auto;
         display:flex;
         flex-direction: row;
         justify-content: flex-start;
-        align-items: center;
+        align-items: flex-start;
         flex-wrap: wrap;
         background:white;
         background-attachment: fixed;
         background-position: center; 
+        font-family: 'Share Tech', sans-serif;
         
         .title-section3{
-            z-index:30;
-            position: relative;
-            left: -100px;
-            top: 0vw;
-            width: 100px;
+            width: 100%;
             color: black;
-            padding:0;
-            margin-bottom:0em;
+            margin-top: 7em;
             font-size: 0.7em;
+            font-family: 'Caveat';
+            font-weight:700;
            /*  background-color: #24292E; */
-        }
-        .title-section3::after{
-            content:"";
-            z-index:35;
-            position: absolute;
-            top:0.4em;
-            left:-0.4em;
-            background: transparent;
-            border-bottom: 1px solid black;
-            border-left: 1px solid black;
-            transform: scaleX(1);
-            transform-origin: bottom left;
-            height: 70%;
-            width: 150%;
-            text-align: center;
-            
         }
 
         #arrow-up2{ 

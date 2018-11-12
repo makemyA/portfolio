@@ -1,19 +1,14 @@
 @import './mixin';
 @import './color';
-  /* header::after{
-    z-index: -3;
-    position: absolute;
-    top:40%;
-    content:"";
-    height: 100vh;
-    width: 100vw;
-    background: -webkit-linear-gradient(-180deg, rgba(245, 245, 245,1), rgb(255, 255, 255));
-    background: linear-gradient(-180deg, rgba(245, 245, 245,1), rgb(255, 255, 255));
-}   */
+@font-face {
+
+    font-family: 'mplus' ;
+    src: url('/portfolio_makemya/src/Components/Vues/HomePage/Assets/mplus-1mn-light.ttf');
+ } 
 header {
     @include flexCenter;
     position: fixed;
-    z-index:3;
+    z-index:500;
     flex-wrap:nowrap;
     flex-direction: row;
     justify-content: space-between;
@@ -22,7 +17,7 @@ header {
     height: 120px;
     width: 100%;
     background-color: white;
-    border-bottom: 0.2px solid rgba(0, 0, 0,0.1);
+    border-bottom: 0.5px solid rgba(0, 0, 0,0.1);
     .menu-media {
         position: relative;
         z-index: 6;
@@ -38,12 +33,16 @@ header {
        li {
            margin-left: 0.9em;
            color: black;
-           a{
+           
+           a {
                color: black;
                font-size: 0.6em;
+               cursor: pointer;
+               
            }
            a:hover{
                color:lightgray;
+               cursor: pointer;
            }
        }
     }
@@ -58,11 +57,21 @@ header {
         justify-content: center;
         align-items: flex-start;
         line-height: .01em;
+        background-color:transparent;
+        font-family: 'Share Tech', sans-serif;
+        
          .title{
             font-size: 0.8em;
             text-align: left;
             margin: 0;
             padding: 0;
+            color: transparent;
+            filter: grayscale(30%);
+            background-image: url('https://static.lexpress.fr/medias_11703/w_864,h_483,c_crop,x_0,y_173/w_640,h_360,c_fill,g_north/v1513258138/cassiopeia-a-supernova_5992030.jpg');
+            background-repeat: repeat-x;
+            background-size: contain;
+            background-clip: text;
+            animation: animate 10s linear infinite;
         }
         h3{
             font-size: 0.4em;
@@ -77,14 +86,16 @@ header {
         width:50%;
         h1 {
             text-align: center;
-            color: $primary;
-            font-size: 2em;
+            color: black;
+            font-size: 2.2em;
+            font-family: 'Caveat';
+            cursor: pointer;
           
         }
-        h1 a {
+         a {
             text-decoration: none;
-            color:black;
         }
+        
         .pointer-nav{
             min-width: 5px;
             min-height: 5px;
@@ -98,11 +109,15 @@ header {
             list-style: none;
             margin: 0.5em 0 0 0;
             text-transform: uppercase;
-            font-size: 0.5em;
+            font-size: 0.6em;
             color:lightgray;
+            font-family: 'Share Tech', sans-serif;
             a{
                 text-decoration: none;
                 color: lightgray;
+            }
+            .current{
+                color: black;
             }
             a:hover{
                 color: $primary;
@@ -112,3 +127,14 @@ header {
     }
     
 }
+@keyframes animate {
+    from {
+      background-position:  0%  0%;
+    }
+    to {
+      background-position: 100%  0%;
+    }
+  }
+  ji{
+      
+  }

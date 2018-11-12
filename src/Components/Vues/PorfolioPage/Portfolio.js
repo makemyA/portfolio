@@ -30,8 +30,8 @@ class Portfolio extends Component {
             justify-content: center;
             align-items: center;
             flex-wrap: wrap;
-            margin: 5em auto 0 auto;
-            background-color: transparent;
+            margin: 2em auto 0 auto;
+            background-color: white;
             width: 100vw;  
         `
        
@@ -42,6 +42,7 @@ class Portfolio extends Component {
             font-size: 1em;
             margin:0.2em;
             background: transparent;
+            perspective: 1500px;
             ` 
            
         const FlipBoxInner = styled.div`
@@ -49,53 +50,43 @@ class Portfolio extends Component {
             width:100%;
             height:100%
             color:white;
-            
         `    
         const FlipBoxFront = styled.div`
-            position: relative;
+            position: absolute;
             display:flex;
             justify-content:center;
             align-items: center;
             flex-wrap: wrap;
             background: ${props => props.background};
-            filter: sepia(40%);
             background-size: cover;
-            font-size: 0.8em;
+            font-size: 0.6em;
             width:100%;
             height:100%;
+            filter: sepia(15%) grayscale(80%);
+            transform: scale(1);
+            transition: transform 0.3s;
            
-            :after{
+            :after {
                 position: absolute;
-                top:0;
-                left:0;
+                z-index:-1;
+                display:flex;
+                justify-content: center;
+                align-items:center;
                 content:"";
-                height:100%;
+                top:0;
                 width:100%;
-                background: yellow;
-                transform: scaleY(0);
-                transition: transform 0.5s;
+                height:100%;
+                background: rgba(0,0,0,0.2);
+                background-size: cover;
+                opacity:1;
+                font-size: 0.6em;
             }
-            :after::hover {
-                transform: scaleY(1);
+            :hover{
+                transform: scale(1.02);
+                filter: grayscale(0%);
+                transform-style: preserve-3d;
+                transform: rotate3d(0,1,0,20deg); 
             }
-        `
-        const FlipBoxBack = styled.div`
-            position: absolute;
-            z-index:0;
-            display:flex;
-            justify-content:center;
-            align-items: center;
-            flex-wrap: wrap;
-            background: #404352;
-            font-size: 0.8em;
-            width:100%;
-            height:100%;
-            filter: grayscale(100%);
-           
-           
-           
-           
-           
         ` 
         const BoxTitle= styled.div`
             display:flex;
@@ -104,10 +95,11 @@ class Portfolio extends Component {
             flex-wrap: wrap;
             width: 100%;
             height: 50%;
+            color: white;
+            font-family: 'Share Tech', sans-serif;
             h2{
-                font-size: 0.8em;
+                font-size: 1em;
                 text-align: center;
-                color: white;
                 width:100%;
             }
             h3{
@@ -120,28 +112,10 @@ class Portfolio extends Component {
                 position: relative;
                 cursor: pointer;
                 background-color: transparent;
-                font-size: 0.7em;
+                font-size: 0.1em;
                 text-decoration: none;
                 border: none;
-                width: 5em;
                 text-align: center;
-                ::after{
-                    content:"";
-                    position: absolute;
-                    background: white;
-                    top:100%;
-                    left:0;
-                    width:100%;
-                    height: 0.5px;
-                    transform: scaleX(1);
-                    transform-origin: bottom left;
-                    transition: transform 0.3s;
-                }
-                :hover::after{
-                    transform: scaleX(0);
-                }
-            :hover{
-            }
         `    
            
         
@@ -150,18 +124,15 @@ class Portfolio extends Component {
             return(
         <FlipBox className='flipBox'>
             <FlipBoxInner className='flipBoxInner'>
-                <FlipBoxFront background={'url('+item.url+') no-repeat'}>
-                    <BoxTitle className='boxTitleFront'>
-                    <h2>16-10-1984</h2>
-                    </BoxTitle>
-                </FlipBoxFront>
-                <FlipBoxBack background={'url('+item.url+') no-repeat'}>
-                    <BoxTitle className='boxTitleBack'>
-                        <h3>{item.cat}</h3>
-                        <h2>{item.title}</h2>
-                        <Link to={'/project/'+item.id}>See more</Link>
-                    </BoxTitle>
-                </FlipBoxBack>
+                <Link to={'/project/'+item.id}>
+                    <FlipBoxFront content= {item.title} background={'url('+item.url+') no-repeat'}>
+                        <BoxTitle>
+                            <h3>{item.cat}</h3>
+                            <h2>{item.title}</h2>
+                            <h3>See more</h3>  
+                        </BoxTitle>
+                    </FlipBoxFront>
+                </Link>
             </FlipBoxInner>
         </FlipBox>)
         });

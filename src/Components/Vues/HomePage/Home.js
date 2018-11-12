@@ -12,9 +12,12 @@ export default class HomePage extends Component {
    
     
     componentWillMount(){
-        window.scrollTo(0,0);
+        
+       
     }
     componentDidMount(){
+     /*    let sections= document.querySelectorAll(".section");
+        console.log(sections[0]);  */
     }
     componentWillUpdate(){
     
@@ -40,26 +43,23 @@ export default class HomePage extends Component {
         return(
             <div id='containerHome' className='container-home'>
                 <Header />
-                <Element name='highlight'>
-                    <div id='section1' className='container-section1'>
+                <Element name='home'>
+                    <div id='section1' className='section container-section1'>
                         <div class="title-section1">Intro</div>
                         <Presentation />
                         <Link to='portfolio' spy={true} smooth={true}><a href='#section2'><i id ='arrow-down1'className="fas fa-angle-down"></i></a></Link>
                     </div>
                 </Element>
                 <Element name='portfolio'>
-                    <div id='section2' className='container-section2'>
+                    <div id='section2' className='section container-section2'>
                         <div className='title-section2'>PORTFOLIO</div>
                         <Portfolio />
-                        <Link to='highlight' spy={true} smooth={true}><a href="#header"><i id='arrow-up1'className="fas fa-angle-up"></i></a></Link>  
-                        <Link to='contact' spy={true} smooth={true}><a href='#section3'><i id ='arrow-down2'className="fas fa-angle-down"></i></a></Link>
                     </div>
                 </Element>
                 <Element name='contact'>
-                    <div id='section3' className='container-section3'>
+                    <div id='section3' className='section container-section3'>
                         <div className='title-section3'>CONTACT</div>
                         <Contact />
-                        <Link to='portfolio' spy={true} smooth={true}><a href="#header"><i id='arrow-up2'class="fas fa-angle-up"></i></a></Link>
                     </div> 
                 </Element> 
             </div>

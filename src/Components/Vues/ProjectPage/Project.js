@@ -10,8 +10,8 @@ class Project extends Component {
         this.state = {
            front: true, 
            class:'',
-           overflow:'hidden',
            pointerEvent: 'auto',
+           overflow:'hidden',
            title: bdd[this.props.match.params.id-1].title,
           }
     }
@@ -36,7 +36,6 @@ class Project extends Component {
         this.setState({
         front: false,
         class: 'flipBoxInner',
-        overflow:'scroll',
         pointerEvent: 'auto'
         /* iconswitch: this.state.video?<i class="fas fa-toggle-on"></i>:<i class="fas fa-toggle-on reverse"></i>, */
        /*  height:${props => props.height}px; */
@@ -48,7 +47,6 @@ class Project extends Component {
         this.setState({
         front:true,
         class: '',
-        overflow:'hidden',
         pointerEvent: 'auto'
         /* iconswitch: this.state.video?<i class="fas fa-toggle-on"></i>:<i class="fas fa-toggle-on reverse"></i>, */
        /*  height:${props => props.height}px; */
@@ -59,7 +57,7 @@ class Project extends Component {
         this.setState({
             front:true,
             class:'',
-            overflow:'hidden',
+            
             pointerEvent:'auto',
         })
     }
@@ -100,54 +98,60 @@ class Project extends Component {
        
         const Container = styled.div`
             width: 100vw;
-            display:flex;
-            flex-direction :row;
-            justify-content:space-between;
-            align-items:flex-start;
-            flex-wrap: wrap;
-        `
-        const Title = styled.div`
-            position: fixed;
-            z-index:1000;
-            left:-5vw;
-            top:50vh;
-            font-size:1.8em;
-            color:white;
-            font-weight: 700;
-            transform: rotate(-90deg);
+            height: 100vh;
+            overflow: hidden;
         `
         const Section = styled.div`
-        position:relative;
+        
         display:flex;
-        width: 100%;
+        justify-content: space-between;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: center;
+        width: 100vw;
         height: 100vh;
         overflow-y: ${props => props.overflow};
-        overflow-x: hidden;
         background : url(${props => props.background}) no-repeat;
         background-size: cover;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        flex-wrap: wrap;
-        margin: 0 auto;
+        
         &.section{
             background-attachment: fixed;
             background-position: center;
         
         }
         `
+        const Title = styled.div`
+        position: relative;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        width: 15%;
+        height: 100%;
+        overflow: hidden;
+        z-index:1000;
+        color:white;
+        font-weight: 700;
+        h1{
+            text-align:center;
+            white-space: nowrap;
+            font-size: 2.6vw;
+            font-weight: 700;
+            font-family: 'Share Tech', sans-serif;
+            transform: rotate(-90deg);
+        }
+    `
         const FlipBox = styled.div`
-            position: absolute;
-            width:45vw;
-            height:45vh;
+            position: relative;
+            width: 60%;
+            min-width: 500px;
+            height:100%;
+            min-height: 400px;
             font-size: 1em;
-            z-index:1000;
             perspective: 1500px;
-            pointer-events:auto;
-            overflow-y: visible;
+            overflowY: hidden;
             pointer-events: ${props=> props.pointerEvent};
             :hover .flipBoxInner{
-                transform: rotateY(175deg);
+                transform: rotateY(180deg);
                
             }
             
@@ -155,103 +159,126 @@ class Project extends Component {
             `
         const FlipBoxInner = styled.div`
             position: relative;
+            display:flex;
+            justify-content: center;
+            align-items:center;
             width:100%;
             height:100%;
-            transition: transform 0.8s;
+            transition: transform 0.5s;
             transform-style: preserve-3d;
-            margin-bottom: 12em;
             transform: rotate3d(0,1,0,20deg);
+            overflowY: auto;
+            cursor: pointer;
             :hover{
-                cursor: pointer;
                 transform: scale(1);
             }
         `     
         const BoxVideo = styled.video`
             position: absolute;
             width: 100%;
-            height: 100%;
+            height: 70%;
             source:${props => props.src};
             background-size: cover;
             backface-visibility: hidden;
+           
+            overflowY: auto;
             `
-        const Card = styled.div`
-            display:flex;
-            position: fixed;
-            z-index: 50;
-            left:80%;
-            top: 30vh;
-            flex-direction: column;
-            justify-content:space-evenly;
-            align-items:flex-start;
-            width: 200px;
-            background-color: rgba(0, 0, 0, 0.0);
-            color: white;
-            margin: 2em 2em 0 0 ;
-            & h2{
-                font-size: 1em;
-                font-weight:700;
-                margin: 0em;
-            }
-            & h3{
-                font-size: 0.7em;
-                margin: 0.2em 0 0.7em 0;
-            } 
-        `
+        
         const Md = styled.div`
             position: absolute;
             z-index: 10;
             display:flex;
             justify-content: center;
-            align-items: flex-start;
+            align-items: center;
             width:100%;
+            height: 75%;
             font-size:0.5em;
             border: .2px solid rgba(0, 0, 0, 0.2);
             transform: rotateY(180deg);
             backface-visibility: hidden;
-            background: rgba(230, 230, 230, 0.9);
-            filter:grayscale(40%) sepia(10%);
-            color: black;
-            &.readme::after{
-                z-index:50;
-                content:"";
-                text-align:center;
-                position:absolute;
-                top:0;
-                left:0;
-                width: 100%;
-                height:100%;
-                background : url(${props => props.background}) no-repeat;
-                filter:sepia(40%) grayscale(100%);
-                opacity: 0.2;
-                background-size: cover;
-                background-attachment: fixed;
-                background-position: center;
+            background: rgba(255, 255, 255, 1);
+            filter:grayscale(0%) sepia(0%);
+            color:rgba(36, 41, 46,0.9);
+            font-family: 'Share Tech', sans-serif;
+            cursor: default;
+            overflowY: hidden;
             }
+            
             h1{
                 position:relative;
                 z-index:100;
                 font-size:3em;
-                margin: 0.2em;
+                margin: 0.5em 0.5em;
                 color: black;
+                font-weight: 700;
             }
             h2{
                 position:relative;
                 z-index:100;
-                font-size:2em;
-                margin: 0.2em;
+                font-size:2.5em;
+                margin: 0.5em 0.5em;
+                font-weight: 500;
             }
             h3{
                 position:relative;
                 z-index:100;
                 font-size:1.5em;
-                margin: 0.2em;
+                margin: 0.5em 0.5em;
+                font-weight: 500;
+            }
+            ul {
+                margin: 0.5em 1em 0.3em 1em;
             }
             p, li{
                 position:relative;
                 z-index:100;
-                margin: 0.6em;
+                margin: 0.3em 1em;
+            }
+            a {
+                position: relative;
+                text-decoration: none;
+                border: none;
+                color : black;
+                z-index:15;
+                ::after {
+                    position: absolute;
+                    content:"";
+                    top: 100%;
+                    left:0;
+                    height: 0.1em;
+                    width: 100%;
+                    background: black;
+                    transform: scaleX(1);
+                    transform-origin: left;
+                }
+                :hover::after {
+                    transform: scaleX(0);
+                    transition : transform 0.3s;
+                }
             }
             `
+            const Card = styled.div`
+            position: relative;
+            display:flex;
+            flex-direction: column;
+            justify-content:space-evenly;
+            align-items:flex-start;
+            width: 15%;
+            background-color: rgba(0, 0, 0, 0.0);
+            color: white;
+           
+            & h2{
+                font-size: 1.2em;
+                font-weight:700;
+                margin: 0em;
+                font-family: 'Share Tech', sans-serif;
+            }
+            & h3{
+                font-size: 0.6em;
+                margin: 0.2em 0 0.7em 0;
+                font-family: 'Share Tech', sans-serif;
+            } 
+        `
             let eventHandler= ()=>console.log(window.pageXOffset+window.pageYOffset);
             window.addEventListener('scroll', eventHandler);
             const id= this.props.match.params.id;
@@ -275,8 +302,20 @@ class Project extends Component {
                 <Header2 />
                 <Section   className='section' overflow={this.state.overflow}  background ={showBackground()}>
                         <Title>
-                            {showTitle()}
+                            <h1> {showTitle()}</h1>
                         </Title>
+                       
+                        <FlipBox>
+                            <FlipBoxInner onMouseLeave={this.onMouseLeave} className={this.state.class}>
+                                <BoxVideo onClick={this.showBack} loop autoPlay>
+                                    <source src={showVideo()} type="video/mp4"/>
+                                    Votre navigateur ne supporte pas la balise vidéo.
+                                </BoxVideo>
+                                <Md  onClick={this.showFront}  id='markdown-container'className='readme readme-1'>
+                                    <Markdown style={{height:'100%',width: '100%', overflowY: 'auto'}}>{showReadme()}</Markdown>
+                                </Md>
+                            </FlipBoxInner>
+                        </FlipBox>
                         <Card className='id-card'>
                             <h2>When</h2>
                             <h3>{showWhen()}</h3>
@@ -285,17 +324,6 @@ class Project extends Component {
                             <h2>what</h2>
                             <h3>{showWhat()}</h3>
                         </Card>
-                        <FlipBox>
-                            <FlipBoxInner onMouseLeave={this.onMouseLeave} className={this.state.class}>
-                                <BoxVideo onClick={this.showBack} loop autoPlay>
-                                    <source src={showVideo()} type="video/mp4"/>
-                                    Votre navigateur ne supporte pas la balise vidéo.
-                                </BoxVideo>
-                                <Md  onClick={this.showFront}  id='markdown-container'className='readme readme-1'>
-                                    <Markdown style={{width:'100%', height: '100%'}}>{showReadme()}</Markdown>
-                                </Md>
-                            </FlipBoxInner>
-                        </FlipBox>
                     </Section>
             </Container>
           );
